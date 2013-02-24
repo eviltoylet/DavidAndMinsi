@@ -1,0 +1,15 @@
+-if @user
+  %p#notice= notice
+
+  %p
+    %b Key:
+    = @user.key
+  %p
+    %b Email:
+    = @user.email
+
+  = link_to 'Edit', edit_user_path(@user)
+  \|
+  = link_to 'Back', users_path
+-else
+  invalid user #{params[:key]}
