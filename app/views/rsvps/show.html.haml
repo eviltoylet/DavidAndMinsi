@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b User:
+  = @rsvp.user
+%p
+  %b Words:
+  = getsentence(@rsvp.words)
+
+= link_to 'Edit', edit_rsvp_path(@rsvp)
+\|
+= link_to 'Back', rsvps_path

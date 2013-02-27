@@ -1,0 +1,21 @@
+%h1 Listing rsvps
+
+%table
+  %tr
+    %th User
+    %th Words
+    %th
+    %th
+    %th
+
+  - @rsvps.each do |rsvp|
+    %tr
+      %td= rsvp.user
+      %td= rsvp.words
+      %td= link_to 'Show', rsvp
+      %td= link_to 'Edit', edit_rsvp_path(rsvp)
+      %td= link_to 'Destroy', rsvp, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Rsvp', new_rsvp_path

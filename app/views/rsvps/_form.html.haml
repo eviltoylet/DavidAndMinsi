@@ -1,0 +1,67 @@
+= form_for @rsvp do |f|
+  - if @rsvp.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@rsvp.errors.count, "error")} prohibited this rsvp from being saved:"
+      %ul
+        - @rsvp.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :user
+    = f.text_field :user
+  .field
+    %label{:for=>"rsvp[words][1]"}verb
+    %input{:type=>"text", :id=>"rsvp[words][1]", :name=>"rsvp[words][1]"}
+  .field
+    %label{:for=>"rsvp[words][2]"}your names
+    %input{:type=>"text", :id=>"rsvp[words][2]", :name=>"rsvp[words][2]"}
+  .field
+    %label{:for=>"rsvp[words][3]"}will/won't
+    %input{:type=>"text", :id=>"rsvp[words][3]", :name=>"rsvp[words][3]"}
+  .field
+    %label{:for=>"rsvp[words][4]"}verb
+    %input{:type=>"text", :id=>"rsvp[words][4]", :name=>"rsvp[words][4]"}
+  .field
+    %label{:for=>"rsvp[words][5]"}verb past tense
+    %input{:type=>"text", :id=>"rsvp[words][5]", :name=>"rsvp[words][5]"}
+  .field
+    %label{:for=>"rsvp[words][6]"}adjective
+    %input{:type=>"text", :id=>"rsvp[words][6]", :name=>"rsvp[words][6]"}
+  .field
+    %label{:for=>"rsvp[words][7]"}adjective
+    %input{:type=>"text", :id=>"rsvp[words][7]", :name=>"rsvp[words][7]"}
+  .field
+    %label{:for=>"rsvp[words][8]"}plural noun
+    %input{:type=>"text", :id=>"rsvp[words][8]", :name=>"rsvp[words][8]"}
+  .field
+    %label{:for=>"rsvp[words][9]"}number
+    %input{:type=>"text", :id=>"rsvp[words][9]", :name=>"rsvp[words][9]"}
+  .field
+    %label{:for=>"rsvp[words][10]"}advice
+    %input{:type=>"text", :id=>"rsvp[words][10]", :name=>"rsvp[words][10]"}
+  .field
+    %label{:for=>"rsvp[words][11]"}verb
+    %input{:type=>"text", :id=>"rsvp[words][11]", :name=>"rsvp[words][11]"}
+  .field
+    %label{:for=>"rsvp[words][12]"}advice
+    %input{:type=>"text", :id=>"rsvp[words][12]", :name=>"rsvp[words][12]"}
+  .field
+    %label{:for=>"rsvp[words][13]"}noun
+    %input{:type=>"text", :id=>"rsvp[words][13]", :name=>"rsvp[words][13]"}
+  .actions
+    = f.submit 'Save'
+
+-#[verb] ________________
+-#[your names] ________________
+-#[will/won’t] ________________
+-#[verb] ________________
+-#[verb past tense] ________________
+-#[adjective] ________________
+-#[adjective] ________________
+-#[plural noun] ________________
+-#[number] ________________
+-#[advice] ________________
+-#[verb] ________________
+-#[advice] ________________
+-#[noun] ________________
+-
