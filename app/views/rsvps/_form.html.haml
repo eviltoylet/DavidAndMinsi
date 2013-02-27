@@ -10,44 +10,57 @@
     = f.label :user
     = f.text_field :user
   .field
+    -value = (defined? @rsvp.words and ! @rsvp.words.nil?) ? @rsvp.words["1"] : ""
     %label{:for=>"rsvp[words][1]"}verb
-    %input{:type=>"text", :id=>"rsvp[words][1]", :name=>"rsvp[words][1]"}
+    %input{:type=>"text", :id=>"rsvp[words][1]", :name=>"rsvp[words][1]", :value=> "#{value}"}
   .field
+    -value = (defined? @rsvp.words and ! @rsvp.words.nil?) ? @rsvp.words["2"]: ""
     %label{:for=>"rsvp[words][2]"}your names
-    %input{:type=>"text", :id=>"rsvp[words][2]", :name=>"rsvp[words][2]"}
+    %input{:type=>"text", :id=>"rsvp[words][2]", :name=>"rsvp[words][2]", :value=> "#{value}"}
   .field
+    -value = (defined? @rsvp.words and ! @rsvp.words.nil?) ? @rsvp.words["3"]: ""
     %label{:for=>"rsvp[words][3]"}will/won't
-    %input{:type=>"text", :id=>"rsvp[words][3]", :name=>"rsvp[words][3]"}
+    %input{:type=>"text", :id=>"rsvp[words][3]", :name=>"rsvp[words][3]", :value=> "#{value}"}
   .field
+    -value = (defined? @rsvp.words and ! @rsvp.words.nil?) ? @rsvp.words["4"]: ""
     %label{:for=>"rsvp[words][4]"}verb
-    %input{:type=>"text", :id=>"rsvp[words][4]", :name=>"rsvp[words][4]"}
+    %input{:type=>"text", :id=>"rsvp[words][4]", :name=>"rsvp[words][4]", :value=> "#{value}"}
   .field
+    -value = (defined? @rsvp.words and ! @rsvp.words.nil?) ? @rsvp.words["5"]: ""
     %label{:for=>"rsvp[words][5]"}verb past tense
-    %input{:type=>"text", :id=>"rsvp[words][5]", :name=>"rsvp[words][5]"}
+    %input{:type=>"text", :id=>"rsvp[words][5]", :name=>"rsvp[words][5]", :value=> "#{value}"}
   .field
+    -value = (defined? @rsvp.words and ! @rsvp.words.nil?) ? @rsvp.words["6"]: ""
     %label{:for=>"rsvp[words][6]"}adjective
-    %input{:type=>"text", :id=>"rsvp[words][6]", :name=>"rsvp[words][6]"}
+    %input{:type=>"text", :id=>"rsvp[words][6]", :name=>"rsvp[words][6]", :value=> "#{value}"}
   .field
+    -value = (defined? @rsvp.words and ! @rsvp.words.nil?) ? @rsvp.words["7"]: ""
     %label{:for=>"rsvp[words][7]"}adjective
-    %input{:type=>"text", :id=>"rsvp[words][7]", :name=>"rsvp[words][7]"}
+    %input{:type=>"text", :id=>"rsvp[words][7]", :name=>"rsvp[words][7]", :value=> "#{value}"}
   .field
+    -value = (defined? @rsvp.words and ! @rsvp.words.nil?) ? @rsvp.words["8"]: ""
     %label{:for=>"rsvp[words][8]"}plural noun
-    %input{:type=>"text", :id=>"rsvp[words][8]", :name=>"rsvp[words][8]"}
+    %input{:type=>"text", :id=>"rsvp[words][8]", :name=>"rsvp[words][8]", :value=> "#{value}"}
   .field
+    -value = (defined? @rsvp.words and ! @rsvp.words.nil?) ? @rsvp.words["9"]: ""
     %label{:for=>"rsvp[words][9]"}number
-    %input{:type=>"text", :id=>"rsvp[words][9]", :name=>"rsvp[words][9]"}
+    %input{:type=>"text", :id=>"rsvp[words][9]", :name=>"rsvp[words][9]", :value=> "#{value}"}
   .field
+    -value = (defined? @rsvp.words and ! @rsvp.words.nil?) ? @rsvp.words["10"]: ""
     %label{:for=>"rsvp[words][10]"}advice
-    %input{:type=>"text", :id=>"rsvp[words][10]", :name=>"rsvp[words][10]"}
+    %input{:type=>"text", :id=>"rsvp[words][10]", :name=>"rsvp[words][10]", :value=> "#{value}"}
   .field
+    -value = (defined? @rsvp.words and ! @rsvp.words.nil?) ? @rsvp.words["11"]: ""
     %label{:for=>"rsvp[words][11]"}verb
-    %input{:type=>"text", :id=>"rsvp[words][11]", :name=>"rsvp[words][11]"}
+    %input{:type=>"text", :id=>"rsvp[words][11]", :name=>"rsvp[words][11]", :value=> "#{value}"}
   .field
+    -value = (defined? @rsvp.words and ! @rsvp.words.nil?) ? @rsvp.words["12"]: ""
     %label{:for=>"rsvp[words][12]"}advice
-    %input{:type=>"text", :id=>"rsvp[words][12]", :name=>"rsvp[words][12]"}
+    %input{:type=>"text", :id=>"rsvp[words][12]", :name=>"rsvp[words][12]", :value=> "#{value}"}
   .field
+    -value = (defined? @rsvp.words and ! @rsvp.words.nil?) ? @rsvp.words["13"]: ""
     %label{:for=>"rsvp[words][13]"}noun
-    %input{:type=>"text", :id=>"rsvp[words][13]", :name=>"rsvp[words][13]"}
+    %input{:type=>"text", :id=>"rsvp[words][13]", :name=>"rsvp[words][13]", :value=> "#{value}"}
   .actions
     = f.submit 'Save'
 
