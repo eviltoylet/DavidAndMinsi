@@ -10,7 +10,7 @@ class AdminController < ApplicationController
   end
 
   def delete
-    @rsvp = Rsvp.where("user = '#{params[:user]}'").first
+    @rsvp = Rsvp.find_by_user params[:user]
     @rsvp.destroy unless @rsvp.nil?
 
     redirect_to :back

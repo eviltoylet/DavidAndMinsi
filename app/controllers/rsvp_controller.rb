@@ -1,10 +1,10 @@
 class RsvpController < ApplicationController
   def show
-    @rsvp = Rsvp.where("user = '#{params[:user]}'").first
+    @rsvp = Rsvp.find_by_user params[:user]
   end
 
   def edit
-    @rsvp = Rsvp.where("user = '#{params[:user]}'").first
+    @rsvp = Rsvp.find_by_user params[:user]
     if @rsvp.nil?
       redirect_to "/rsvp/invalid?user=#{params[:user]}"
       return
@@ -13,8 +13,8 @@ class RsvpController < ApplicationController
   end
 
   def update
-    @rsvp = Rsvp.new(params[:rsvp])
-    @rsvp.save
+    @rsvp = Rsvp.find_by_user params[:rsvp][:user]
+    @rsvp.update_attributes(params[:rsvp])
     redirect_to "/rsvp/show?user=#{params[:rsvp][:user]}"
   end
 
