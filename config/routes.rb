@@ -1,10 +1,12 @@
 DavidAndMinsi::Application.routes.draw do
-  resources :rsvps
+  match 'rsvp/edit' => 'rsvp#edit', :via => :get
+  match 'rsvp/update' => 'rsvp#update', :via => :post
+  match 'rsvp/show' => 'rsvp#show', :via => :get
+  match 'rsvp/invalid' => 'rsvp#invalid', :via => :get
 
+  match 'admin' => 'admin#index'
+  match 'admin/delete' => 'admin#delete'
+  match 'admin/add' => 'admin#add'
 
-  match ':controller/:action(/:id)'
   root :to => 'home#index'
-
-  # mainly for generation of helpers
-  resources :users
 end

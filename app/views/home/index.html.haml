@@ -1,6 +1,6 @@
 %center
   %img{:src=>'/assets/splash.png'}
   %p
-  = form_tag('/users/show',:method=>'get') do
-    = text_field_tag 'key'
+  = form_tag('/rsvp/edit',:method=>'get') do
+    = text_field_tag 'user'
     = submit_tag 'go'

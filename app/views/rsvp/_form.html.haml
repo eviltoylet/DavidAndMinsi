@@ -1,0 +1,13 @@
+%form{:action => "/rsvp/update", :method => "post"}
+  .field
+    %label{ :for => "rsvp[user]" } user
+    %input{ :name => "rsvp[user]", :id => "rsvp[user]", :type => "text", :readonly => "true", :value => "#{@rsvp.user}" }
+
+  - getmapping.each do |key, value|
+    .field
+      %label{ :for => "rsvp[words][#{key}]"}= value
+      %input{ :type => "text", :id => "rsvp[words][#{key}]", :name => "rsvp[words][#{key}]", :value => "#{@rsvp.words[key]}" }
+
+  .field
+    %input{ :type => "submit" }
+

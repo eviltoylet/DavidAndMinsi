@@ -1,0 +1,24 @@
+- #list all of the entries and stores
+%table
+  %thead
+    %tr
+      %th
+        User
+      %th
+        Story
+      %th
+        Action
+  %tbody
+    - @rsvps.each do |rsvp|
+      %tr
+        %td
+          ="#{rsvp.user}"
+        %td
+          ="#{getsentence(rsvp.words)}"
+        %td
+          =form_tag('/admin/delete', :method => :post) do
+            %input{:type => :hidden, :id => :user, :name => :user, :value => rsvp.user}
+            =submit_tag "delete", :confirm => "really delete?"
+=form_tag('/admin/add', :method => :post) do
+  %input{:type => :text, :id => :user, :name => :user}
+  =submit_tag "add"

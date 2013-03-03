@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class RsvpsControllerTest < ActionController::TestCase
+class RsvpControllerTest < ActionController::TestCase
   setup do
     @rsvp = rsvps(:one)
   end
@@ -8,7 +8,7 @@ class RsvpsControllerTest < ActionController::TestCase
   test "should get index" do
     get :index
     assert_response :success
-    assert_not_nil assigns(:rsvps)
+    assert_not_nil assigns(:rsvp)
   end
 
   test "should get new" do
