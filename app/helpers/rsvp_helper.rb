@@ -22,5 +22,12 @@ module RsvpHelper
      "12" => "advice",
      "13" => "noun"}
   end
+
+  def is_complete?(hash)
+    getmapping.each do |key, value|
+      return false if hash[key].blank?
+    end
+    return true
+  end
 end
 

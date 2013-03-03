@@ -1,1 +1,7 @@
-%blockquote= getsentence(@rsvp.words)
+.hero-unit
+  %h1 A Wedding Story
+.span2
+.span10
+  %blockquote
+    %p= getsentence(@rsvp.words)
+    %small= "created by #{@rsvp.words["2"]}"

@@ -3,5 +3,5 @@
   %p
   .input-append
     = form_tag('/rsvp/edit',:method=>'get') do
-      = text_field_tag 'user'
-      = submit_tag 'go', :class => "btn"
+      = text_field_tag 'user', nil, :placeholder => "enter your key"
+      %button.btn{:type => "submit"} go

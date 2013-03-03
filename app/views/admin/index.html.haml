@@ -1,5 +1,4 @@
-- #list all of the entries and stores
-%table.table-hover
+%table.table-hover.table
   %thead
     %tr
       %th
@@ -10,7 +9,7 @@
         Action
   %tbody
     - @rsvps.each do |rsvp|
-      %tr
+      %tr{:class => is_complete?(rsvp.words) ? "success" : "warning"}
         %td
           ="#{rsvp.user}"
         %td
@@ -18,7 +17,10 @@
         %td
           =form_tag('/admin/delete', :method => :post) do
             %input{:type => :hidden, :id => :user, :name => :user, :value => rsvp.user}
-            =submit_tag "delete", :confirm => "really delete?"
-=form_tag('/admin/add', :method => :post) do
-  %input{:type => :text, :id => :user, :name => :user}
-  =submit_tag "add"
+            =submit_tag "delete", :confirm => "really delete #{rsvp.user}?", :class=>"btn btn-danger"
+.input-append.pull-right
+  =form_tag('/admin/add', :method => :post) do
+    %input{:type => :text, :id => :user, :name => :user, :placeholder => "enter a unique key here"}
+    %button.btn.btn-success{:type => "submit"}
+      %i.icon-user
+      add user
