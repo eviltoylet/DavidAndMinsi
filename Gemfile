@@ -4,6 +4,8 @@ gem 'rails', '3.2.11'
 gem 'jquery-rails', '2.0.2'
 gem 'haml'
 gem 'haml-rails'
+gem 'less-rails'
+gem 'therubyracer'
 
 group :development do
     gem 'sqlite3', '1.3.5'
@@ -25,5 +27,6 @@ group :assets do
   # gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '1.2.3'
+  gem 'twitter-bootstrap-rails'
 end
 

@@ -1,6 +1,7 @@
 %center
   %img{:src=>'/assets/splash.png'}
   %p
-  = form_tag('/rsvp/edit',:method=>'get') do
-    = text_field_tag 'user'
-    = submit_tag 'go'
+  .input-append
+    = form_tag('/rsvp/edit',:method=>'get') do
+      = text_field_tag 'user'
+      = submit_tag 'go', :class => "btn"
