@@ -15,7 +15,7 @@ class RsvpController < ApplicationController
   def update
     @rsvp = Rsvp.new(params[:rsvp])
     @rsvp.save
-    redirect_to "/rsvp/show?user=#{params["rsvp"]["user"]}"
+    redirect_to "/rsvp/show?user=#{params[:rsvp][:user]}"
   end
 
   def invalid
