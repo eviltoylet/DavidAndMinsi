@@ -11,3 +11,16 @@
  *= require_self
  *= require_tree .
  */
+
+@font-face {
+  font-family: simple_print;
+  src: url('/assets/simple_print.ttf');
+}
+
+// This seems wrong to need to override everything with important
+// Look into actually replacing the twitter bootstrap styles
+body {
+  font-family: simple_print !important;
+  font-size: 3em !important;
+  line-height: 100% !important;
+}
