@@ -1,26 +1,53 @@
+-# Input variables
+-#   users: the users to display in the table
 %table.table-hover.table
   %thead
     %tr
       %th
-        User
+        Custom Link
+      %th
+        First Name
+      %th
+        Last Name
+      %th
+        Guest First Name
+      %th
+        Guest Last Name
+      %th
+        Attending
       %th
         Story
       %th
         Action
   %tbody
-    - @rsvps.each do |rsvp|
-      %tr{:class => is_complete?(rsvp.words) ? "success" : "warning"}
+    - @users.each do |user|
+      %tr
         %td
-          ="#{rsvp.user}"
+          = link_to(user.custom_link, user_path(user.custom_link))
         %td
-          ="#{getsentence(rsvp.words)}"
+          = user.first_name
         %td
-          =form_tag('/admin/delete', :method => :post) do
-            %input{:type => :hidden, :id => :user, :name => :user, :value => rsvp.user}
-            =submit_tag "delete", :confirm => "really delete #{rsvp.user}?", :class=>"btn btn-danger"
+          = user.last_name
+        %td
+          = user.guest_first_name
+        %td
+          = user.guest_last_name
+        %td
+          = user.attending
+        %td
+          = user.words
+        %td
+          = form_tag('admin/delete') do
+            %input{:type => :hidden, :name => :user, :value => user.custom_link}
+              =submit_tag "delete", :confirm => "really delete #{user.first_name} #{user.last_name}?", :class=>"btn btn-danger"
 .input-append.pull-right
   =form_tag('/admin/add', :method => :post) do
-    %input{:type => :text, :id => :user, :name => :user, :placeholder => "enter a unique key here"}
+    %input{:type => :string, :name => 'user[custom_link', :placeholder => 'custom link'}
+    %input{:type => :string, :name => 'user[first_name]', :placeholder => 'first name'}
+    %input{:type => :string, :name => 'user[last_name]', :placeholder => 'last name'}
+    %input{:type => :string, :name => 'user[guest_first_name]', :placeholder => 'guest first name'}
+    %input{:type => :string, :name => 'user[guest_last_name]', :placeholder => 'guest last name'}
     %button.btn.btn-success{:type => "submit"}
       %i.icon-user
       add user
+

@@ -1,17 +1,17 @@
 class AdminController < ApplicationController
   def add
-    @rsvp = Rsvp.new( {:user => params[:user], :words => {} })
-    @rsvp.save
+    @user = User.new(params[:user])
+    @user.save
     redirect_to :back
   end
 
   def index
-    @rsvps = Rsvp.all
+    @users = User.all
   end
 
   def delete
-    @rsvp = Rsvp.find_by_user params[:user]
-    @rsvp.destroy unless @rsvp.nil?
+    @user = User.find_by_custom_link(params[:user])
+    @user.destroy unless @user.nil?
 
     redirect_to :back
   end
