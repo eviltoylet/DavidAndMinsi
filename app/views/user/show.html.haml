@@ -1,0 +1,8 @@
+.row-fluid
+  .span8.offset2
+    %h1
+      = "Hi #{@user.first_name} #{"and #{@user.guest_first_name}" if !@user.guest_first_name.blank?}!"
+    so glad that you could join us. First, will you be able to join us on August 16th?
+    %form
+      %input{ :type => 'radio', :name => 'user[attending]', :value => 'option1', :checked => true } with pleasure!
+      %input{ :type => 'radio', :name => 'user[attending]', :value => 'option2'} regrettably no
