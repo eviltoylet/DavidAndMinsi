@@ -1,0 +1,11 @@
+= form_for @user, :url => { :action => 'madlib'} do |f|
+  - getmapping.each do |key, value|
+    .input-prepend
+      .add-on= value
+      %input.span2{ :type => 'text', :id => "user[words][#{key}]", :name => "user[words][#{key}]", :value => "#{@user.words[key]}",
+      :placeholder => value }
+    %br
+  %button.btn.btn-primary{ :type => 'submit' }
+    %i.icon-download-alt
+    save
+

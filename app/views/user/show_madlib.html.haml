@@ -1,0 +1,4 @@
+.hero-unit
+  %h1 A Wedding Story
+%p= getsentence(@user.words)
+%small= "created by #{@user.first_name} #{"and #{@user.guest_first_name}" if @user.guest?}"

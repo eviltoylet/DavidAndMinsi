@@ -1,8 +1,24 @@
-.row-fluid
+.row
   .span8.offset2
     %h1
-      = "Hi #{@user.first_name} #{"and #{@user.guest_first_name}" if !@user.guest_first_name.blank?}!"
-    so glad that you could join us. First, will you be able to join us on August 16th?
-    %form
-      %input{ :type => 'radio', :name => 'user[attending]', :value => 'option1', :checked => true } with pleasure!
-      %input{ :type => 'radio', :name => 'user[attending]', :value => 'option2'} regrettably no
+      = "#{@user.first_name} #{"and #{@user.guest_first_name}" if @user.guest?}"
+    = "Minsi and David are getting married on Friday, August 16th. #{ @user.guest? ? 'We' : 'I'} will"
+
+    = form_for @user, :url => { :action => 'update'} do |f|
+      .row
+        .span4
+          %input{ :type => 'radio', :name => 'user[attending]', :value => 'true', :checked => @user.attending? } accept with pleasure.
+      .row
+        .span4
+          %input{ :type => 'radio', :name => 'user[attending]', :value => 'false', :checked => !@user.attending?} decline with regrets.
+      - if @user.guest?
+        .row
+          .span8
+            If only one of you can attend, please let us know below:
+        .row
+          .span8
+            %textarea{ :rows => 3, :name => 'user[comments]', :value => @user.comments }
+      .row
+        .span4
+          %button.btn.btn-success='Save Response'
+

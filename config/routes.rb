@@ -1,10 +1,7 @@
 DavidAndMinsi::Application.routes.draw do
   resources :user
 
-  match 'rsvp/edit' => 'rsvp#edit', :via => :get
-  match 'rsvp/update' => 'rsvp#update', :via => :post
-  match 'rsvp/show' => 'rsvp#show', :via => :get
-  match 'rsvp/invalid' => 'rsvp#invalid', :via => :get
+  match 'user/:id/madlib' => 'user#madlib'
 
   match 'admin' => 'admin#index'
   match 'admin/delete' => 'admin#delete'

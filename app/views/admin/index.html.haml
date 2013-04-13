@@ -16,6 +16,8 @@
       %th
         Attending
       %th
+        Comments
+      %th
         Story
       %th
         Action
@@ -35,7 +37,10 @@
         %td
           = user.attending
         %td
-          = user.words
+          = user.comments
+        %td
+          - if is_complete?(user.words)
+            %a{:href => "/user/#{user.custom_link}/madlib"} click here
         %td
           = form_tag('admin/delete') do
             %input{:type => :hidden, :name => :user, :value => user.custom_link}
