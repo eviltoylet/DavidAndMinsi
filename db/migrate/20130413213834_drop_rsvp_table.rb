@@ -1,6 +1,6 @@
 class DropRsvpTable < ActiveRecord::Migration
   def up
-    drop_table :rsvp
+    drop_table :rsvps
   end
 
   def down

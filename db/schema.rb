@@ -11,14 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130413202845) do
-
-  create_table "rsvps", :force => true do |t|
-    t.text     "user"
-    t.text     "words"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
+ActiveRecord::Schema.define(:version => 20130413214532) do
 
   create_table "users", :force => true do |t|
     t.string   "custom_link"
@@ -27,9 +20,9 @@ ActiveRecord::Schema.define(:version => 20130413202845) do
     t.string   "guest_first_name"
     t.string   "guest_last_name"
     t.boolean  "attending"
-    t.text     "words",            :limit => 255
-    t.datetime "created_at",                      :null => false
-    t.datetime "updated_at",                      :null => false
+    t.text     "words",            :limit => 2097152
+    t.datetime "created_at",                          :null => false
+    t.datetime "updated_at",                          :null => false
     t.text     "comments"
   end
 
